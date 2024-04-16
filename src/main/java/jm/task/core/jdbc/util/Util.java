@@ -13,7 +13,6 @@ public class Util {
     private Util() {
         try {
             connection = DriverManager.getConnection(database, userName, password);
-            System.out.println("Соединение успешно");
         } catch (SQLException exception) {
             throw new RuntimeException("Проблема с подключением к базе данных.");
         }
@@ -27,7 +26,6 @@ public class Util {
     public static void closeConnection() {
         try {
             connection.close();
-            System.out.println("Успешное закрытие соединения");
         } catch (SQLException exception) {
             throw new RuntimeException("Не существует подключения для закрытия");
         }
